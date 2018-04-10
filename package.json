@@ -1,0 +1,19 @@
+{
+  "name": "pixivprincess",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhu-zhu/pixivPrincess.git"
+  },
+  "author": "kangna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhu-zhu/pixivPrincess/issues"
+  },
+  "homepage": "https://github.com/zhu-zhu/pixivPrincess#readme"
+}
