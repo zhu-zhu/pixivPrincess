@@ -3,16 +3,8 @@ const content = require('../simulation/http'),
 
 const reg = {
     small: /https:\/\/i\.pximg\.net\/c\/240x480\/\img-master\/img\/\d{0,}\/\d{0,}\/\d{0,}\/\d{0,}\/\d{0,}\/\d{0,}\/\d{0,}_p\d{0,}_master\d{0,}\.(png|jpg)/g,
-
-    label: '',
-    arr: [
-        {
-            id: 1,
-            big: 'https://i.pximg.net/img-original/img/2018/04/10/21/35/23/68171397_p0.jpg',
-            smail: 'https://i.pximg.net/c/240x480/img-master/img/2018/04/10/21/35/23/68171397_p0_master1200.jpg',
-            name: 'nono'
-        }
-    ]
+    // label: '',
+    arr: []
 }
 
 const main = {
@@ -27,4 +19,14 @@ const main = {
     }
 }
 
-main.smallregexper()
+
+module.exports = {
+    main
+}
+
+// {
+//     id: 1,
+//         big: 'https://i.pximg.net/img-original/img/2018/04/10/21/35/23/68171397_p0.jpg',
+//     smail: 'https://i.pximg.net/c/240x480/img-master/img/2018/04/10/21/35/23/68171397_p0_master1200.jpg',
+//     name: 'nono'
+// }

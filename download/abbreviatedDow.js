@@ -6,6 +6,7 @@ const dwonload = {
         url.map((i,j)=>{
             let res = request.get(i).set('referer', url).pipe(fs.createWriteStream('../demo/'+ j + '.jpg'))
         })
+        console.log('download success')
     }
 }
 

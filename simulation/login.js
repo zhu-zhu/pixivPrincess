@@ -1,12 +1,14 @@
 const axios = require('axios'),
     querystring = require('querystring'),
     config = require('../config/config'),
-    ker = require('./getKey')
+    ker = require('./getKey'),
+    abb = require('../dataDeal/abbreviated')
+    sex = require('./http')
 
 const reqpixiv = {
     loging: async (key, cookie) => {
         try {
-            let {data, status} = await axios({
+            let {data, status, headers} = await axios({
                 method: 'post',
                 url: config.url.login_api,
                 headers: config.url.post_headers,
@@ -23,6 +25,8 @@ const reqpixiv = {
             })
             if (status === 200 && data.body.success) {
                 console.log('login success')
+                config.url.cookieer = headers['set-cookie'][0]
+                abb.main.smallRegexper();
             }
         } catch (e) {
             console.log(e)
