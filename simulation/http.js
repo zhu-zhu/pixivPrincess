@@ -1,7 +1,7 @@
 const axios = require('axios')
     config = require('../config/config')
 
-const url = 'https://www.pixiv.net/ranking.php?mode=daily_r18'
+const url = 'https://www.pixiv.net/ranking.php?mode=daily'
 
 const http = {
     getTop: async () => {
