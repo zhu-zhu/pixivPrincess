@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<style>
+    .pix-img {
+        padding: 1em;
+        margin: 0 0 1em 0;
+        -moz-page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        break-inside: avoid;
+        border: 1px solid #000;
+    }
+    .pix-img img {
+        width: 100%;
+    }
+    #main {
+        -moz-column-count: 9;
+        -webkit-column-count: 9;
+        column-count: 6;
+        -moz-column-gap: 1em;
+        -webkit-column-gap: 1em;
+        column-gap: 1em;
+    }
+</style>
+<body>
+    <div id="main">
+    </div>
+</body>
+<script>
+    const ma = document.querySelectorAll('#main')[0]
+    axios.post('/p1').then(function (response) {
+            response.data.map((i)=>{
+                ma.innerHTML += '<div class="pix-img"><img src="./demo/'+ i +'" alt="aa" /></div>'
+            })
+        }).catch(function (error) {
+            console.log(error);
+        });
+</script>
+</html>
