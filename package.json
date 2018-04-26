@@ -23,6 +23,7 @@
     "pixiv-login": "^1.2.0",
     "querystring": "^0.2.0",
     "request": "^2.85.0",
-    "superagent": "^3.8.2"
+    "superagent": "^3.8.2",
+    "wookmark": "^2.1.2"
   }
 }

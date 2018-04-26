@@ -2,42 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
     <title>Title</title>
+    <link href="./test/main.css" rel="stylesheet" type="text/css" />
+    <link href="./test/plugin/main.css" rel="stylesheet" type="text/css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+    <script src="./test/plugin/wookmark.js"></script>
+    <script src="./test/anime.min.js"></script>
 </head>
-<style>
-    .pix-img {
-        padding: 1em;
-        margin: 0 0 1em 0;
-        -moz-page-break-inside: avoid;
-        -webkit-column-break-inside: avoid;
-        break-inside: avoid;
-        border: 1px solid #000;
-    }
-    .pix-img img {
-        width: 100%;
-    }
-    #main {
-        -moz-column-count: 9;
-        -webkit-column-count: 9;
-        column-count: 6;
-        -moz-column-gap: 1em;
-        -webkit-column-gap: 1em;
-        column-gap: 1em;
-    }
-</style>
-<body>
-    <div id="main">
-    </div>
+<body class="loading">
+    <div class="grid"></div>
 </body>
-<script>
-    const ma = document.querySelectorAll('#main')[0]
-    axios.post('/p1').then(function (response) {
-            response.data.map((i)=>{
-                ma.innerHTML += '<div class="pix-img"><img src="./demo/'+ i +'" alt="aa" /></div>'
-            })
-        }).catch(function (error) {
-            console.log(error);
-        });
-</script>
+<script src="./test/main.js"></script>
 </html>

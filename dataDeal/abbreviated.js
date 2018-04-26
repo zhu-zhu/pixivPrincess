@@ -7,17 +7,22 @@ const reg = {
     arr: []
 }
 
+var cer = /<a href="member_illust\.php\?mode=medium&amp;illust_id=\d{0,}&amp;ref=rn-b-\d{0,}-title-\d{0,}&amp;uarea=daily" class="title" target="_blank">([\s\S]*?)<\/a>/g
+
 const main = {
     smallRegexper: async () => {
         let re = await content.http.getTop()
-        let smurl = re.match(reg.small)
-        reg.arr = smurl
-        let save = await abbdow.dwonload.small(smurl)
+        console.log(re.match(/<a href="member_illust\.php\?mode=medium&amp;illust_id=\d{0,}&amp;ref=rn-b-\d{0,}-title-\d{0,}&amp;uarea=daily" class="title" target="_blank">[\s\S]*?<\/a>/g)[0].replace(cer, "$1"))
+        // let smurl = re.match(reg.small)
+        // reg.arr = smurl
+        // let save = await abbdow.dwonload.small(smurl)
     },
     bigRegexper: async () => {
         console.log(reg.arr)
     }
 }
+
+main.smallRegexper()
 
 
 module.exports = {
