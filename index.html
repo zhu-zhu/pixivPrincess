@@ -11,8 +11,53 @@
     <script src="./test/plugin/wookmark.js"></script>
     <script src="./test/anime.min.js"></script>
 </head>
-<body class="loading">
+<body class="">
     <div class="grid"></div>
+    <!--<form action="http://api.cloudsql.1473.cn/" method="post">-->
+        <!--<input type="text" name="subject" placeholder="标题"/>-->
+        <!--<input type="text" name="body" placeholder="备注">-->
+        <!--<input type="text" name="total_fee" placeholder="付款金额"/>-->
+        <input type="button" onclick="loadDoc()" value="确认付款">
+    <!--</form>-->
+    <form action="http://localhost:3000/" method="post">
+        <input type="text" name="subject" placeholder="标题"/>
+        <input type="text" name="body" placeholder="备注">
+        <input type="text" name="total_fee" placeholder="付款金额"/>
+        <input type="submit" value="确认付款">
+    </form>
 </body>
-<script src="./test/main.js"></script>
+<!--<script src="./test/main.js"></script>-->
+<script>
+    // function loadDoc() {
+    //     var data = "subject=13128878693&body=1&total_fee=1";
+    //
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.withCredentials = true;
+    //
+    //     xhr.addEventListener("readystatechange", function () {
+    //         if (this.readyState === this.DONE) {
+    //             console.log(this.responseText);
+    //         }
+    //     });
+    //
+    //     xhr.open("POST", "http://api.cloudsql.1473.cn");
+    //     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    //     xhr.send(data);
+    // }
+const loadDoc = async () => {
+    let { data, status } = await axios({
+        method: 'get',
+        url: 'http://10.3.14.31:8000/aa',
+        data: {
+            subject: 'Fred',
+            body: '1',
+            total_fee: '1'
+        },
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    })
+}
+
+</script>
 </html>
