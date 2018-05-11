@@ -5,6 +5,18 @@ const express = require('express'),
     root = path.join('./demo'),
     arr = []
 
+app.all('*', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", req.headers.origin); //设置来源
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    res.header("Access-Control-Max-Age", "604800000");
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header("X-Powered-By", ' 3.2.1');
+    // res.header("Content-Type", "application/json;charset=utf-8");
+    next();
+});
+
+
 app.use('/', express.static(__dirname + '/'))
 
 app.post('/p1', function (req, res) {
@@ -22,7 +34,7 @@ function readDir(path){
                 if(info.isDirectory()){
                     readDir(path+"/"+ele);
                 }else{
-                    arr.push(ele)
+                    arr.push('http://localhost:3000/demo/' + ele)
                 }
             })
         })
@@ -36,3 +48,7 @@ const server = app.listen(3000, function () {
 
     console.log('Example app listening at http://%s:%s', host, port);
 });
+
+
+
+
