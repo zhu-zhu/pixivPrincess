@@ -9,28 +9,25 @@ window.onload = async function () {
             })
             imagesLoaded( document.querySelector('.grid'), () => {
                 let wookmark = new Wookmark('.grid');
-                // body.classList.remove('loading')
-                // let reverseAnim = anime({
-                //     targets: '.grid-item',
-                //     duration: 800,
-                //     elasticity: 600,
-                //     delay: function(t,i) {
-                //         return i*10;
-                //     },
-                //     opacity: {
-                //         value: [0,1],
-                //         duration: 600,
-                //         easing: 'linear'
-                //     },
-                //     scaleX: {
-                //         value: [0.4,1]
-                //     },
-                //     scaleY: {
-                //         value: [0.6,1],
-                //         duration: 1000
-                //     }
-                //
-                // });
+                body.classList.remove('loading')
+                let reverseAnim = anime({
+                    targets: '.grid-item',
+                    duration: function(t,i) {
+                        return 500 + i*50;
+                    },
+                    easing: 'easeOutExpo',
+                    delay: function(t,i) {
+                        return i * 20;
+                    },
+                    opacity: {
+                        value: [0,1],
+                        duration: function(t,i) {
+                            return 250 + i*50;
+                        },
+                        easing: 'linear'
+                    },
+                    translateY: [400,0]
+                });
             })
         }
     } catch (e) {
